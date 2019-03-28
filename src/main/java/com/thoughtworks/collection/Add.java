@@ -3,6 +3,7 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.List;
+import  java.util.ArrayList;
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
@@ -88,6 +89,10 @@ public class Add {
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> arr = new ArrayList();
+        for (int i = 1; i <arrayList.size() ; i++) {
+            arr.add((arrayList.get(i-1)+arrayList.get(i))*3);
+        }
+        return arr;
     }
 }
