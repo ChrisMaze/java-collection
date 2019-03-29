@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Reduce {
@@ -13,19 +14,30 @@ public class Reduce {
     }
 
     public int getMaximum() {
-        throw new NotImplementedException();
+        List<Integer> arr = new ArrayList(arrayList);
+        arr.sort(null);
+        return arr.get(arr.size()-1);
     }
 
     public double getMinimum() {
-        throw new NotImplementedException();
+        List<Integer> arr = new ArrayList(arrayList);
+        arr.sort(null);
+        return arr.get(0);
     }
 
     public double getAverage() {
-        throw new NotImplementedException();
+        double sum = 0;
+        for (Integer temp: arrayList) {
+            sum += temp;
+        }
+        return sum / arrayList.size();
     }
 
     public double getOrderedMedian() {
-        throw new NotImplementedException();
+        List<Integer> arr = new ArrayList(arrayList);
+        arr.sort(null);
+
+        return (arr.size()%2 ==1) ? arr.get(arr.size()/2) : (arr.get(arr.size()/2)+arr.get(arr.size()/2 - 1))/2.0;
     }
 
     public int getFirstEven() {
@@ -41,7 +53,14 @@ public class Reduce {
     }
 
     public Double getMedianInLinkList(SingleLink singleLink) {
-        throw new NotImplementedException();
+        double mid0 =0 ;
+        int right=0;
+        if (arrayList.size()%2 == 0)
+            right = arrayList.size()/2;
+        mid0 = ((double)singleLink.getNode(right)+(double)singleLink.getNode(right-1))/2.0;
+        Double mid = new Double(mid0);
+        return mid;
+
     }
 
     public int getLastOdd() {
