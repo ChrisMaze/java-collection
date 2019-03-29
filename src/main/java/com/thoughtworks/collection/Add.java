@@ -3,8 +3,10 @@ package com.thoughtworks.collection;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import  java.util.ArrayList;
+
 
 public class Add {
     public int getSumOfEvens(int leftBorder, int rightBorder) {
@@ -70,7 +72,7 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-        List<Integer> arr = new ArrayList<Integer>();
+        List<Integer> arr = new ArrayList();
         double mid;
         for (Integer temp : arrayList) {
             if(temp % 2 ==0 )
@@ -85,7 +87,6 @@ public class Add {
    }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        List<Integer> arr = new ArrayList<Integer>();
         double sum=0,ave=0;
         int count = 0;
         for (Integer temp : arrayList) {
@@ -97,16 +98,29 @@ public class Add {
         }
         if (count != 0)
             ave = sum / count;
-
         return ave;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
-        throw new NotImplementedException();
+
+        for (Integer temp : arrayList) {
+            if(temp % 2 ==0 && temp == specialElment)
+               return true;
+        }
+
+        return false;
     }
 
     public List<Integer> getUnrepeatedFromEvenIndex(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> arr = new ArrayList();
+        for (Integer temp : arrayList) {
+            if(temp % 2 ==0 )
+                arr.add(temp);
+        }
+        HashSet h = new HashSet(arr);
+        arr.clear();
+        arr.addAll(h);
+        return  arr;
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
