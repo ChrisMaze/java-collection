@@ -13,7 +13,6 @@ public class FlatenTest {
     public void can_transform_two_dimensional_array_to_one() {
         //把二维数组变成一维数组
         Integer[][] array = new Integer[][]{{1}, {2}, {3, 4}};
-
         Integer[] result = new Integer[]{1, 2, 3, 4};
         List<Integer> resultList = Arrays.asList(result);
 
