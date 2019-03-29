@@ -13,12 +13,9 @@ public class FilterTest {
         //求数组中的偶数
         Integer[] array = new Integer[]{1, 2, 3, 4, 5};
         List<Integer> arrayList = Arrays.asList(array);
-
         Filter filter = new Filter(arrayList);
-
         Integer[] result = new Integer[]{2, 4};
         List<Integer> resultList = Arrays.asList(result);
-
         assertThat(filter.filterEven()).isEqualTo(resultList);
     }
 
