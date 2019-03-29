@@ -2,6 +2,7 @@ package com.thoughtworks.collection;
 
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Collections;
 import java.util.List;
 import  java.util.ArrayList;
 
@@ -69,11 +70,35 @@ public class Add {
     }
 
     public double getMedianOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
-    }
+        List<Integer> arr = new ArrayList<Integer>();
+        double mid;
+        for (Integer temp : arrayList) {
+            if(temp % 2 ==0 )
+                arr.add(temp);
+        }
+        Collections.sort(arr);
+        if(arr.size() % 2 == 0)
+            mid = (arr.get(arr.size()/2)+arr.get(arr.size()/2-1))/2;
+        else
+            mid = arr.get(arr.size()/2);
+        return mid;
+   }
 
     public double getAverageOfEven(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> arr = new ArrayList<Integer>();
+        double sum=0,ave=0;
+        int count = 0;
+        for (Integer temp : arrayList) {
+            if(temp % 2 ==0 )
+            {
+                sum += temp;
+                count++;
+            }
+        }
+        if (count != 0)
+            ave = sum / count;
+
+        return ave;
     }
 
     public boolean isIncludedInEvenIndex(List<Integer> arrayList, Integer specialElment) {
