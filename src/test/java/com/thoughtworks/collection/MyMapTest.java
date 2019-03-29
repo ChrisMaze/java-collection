@@ -11,7 +11,6 @@ public class MyMapTest {
     @Test
     public void should_map_to_triple() {
         //将集合A中得元素映射成集合B中的元素
-
         Integer[] array = new Integer[]{1, 3, 5, 4, 9};
         List<Integer> list = Arrays.asList(array);
 
