@@ -1,6 +1,6 @@
 package com.thoughtworks.collection;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+//import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -124,7 +124,18 @@ public class Add {
     }
 
     public List<Integer> sortByEvenAndOdd(List<Integer> arrayList) {
-        throw new NotImplementedException();
+        List<Integer> arrEven = new ArrayList();
+        List<Integer> arrOdd = new ArrayList();
+        Collections.sort(arrayList);
+        for (Integer temp : arrayList) {
+            if(temp % 2 ==0 )
+                arrEven.add(temp);
+            else
+                arrOdd.add(temp);
+        }
+        Collections.reverse(arrOdd);
+        arrEven.addAll(arrOdd);
+        return  arrEven;
     }
 
     public List<Integer> getProcessedList(List<Integer> arrayList) {
